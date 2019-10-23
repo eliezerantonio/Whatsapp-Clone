@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WhatsApp</string>
-    <string name="botao_cadastrar">Cadastrar</string>
-    <string name="botao_Cadastrar">cadastrar</string>
+    <string name="todo">TODO</string>
+    <string name="botao_cadastrar">cadastrar</string>
+    <string name="botao_validao">validar</string>
+    <string name="texto_validacao">Validação</string>
 </resources>
