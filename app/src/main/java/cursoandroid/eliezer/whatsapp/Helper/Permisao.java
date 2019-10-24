@@ -16,7 +16,7 @@ public class Permisao {
 
     public static boolean validaPermissoes(int requestCode, Activity activity, String[] permissoes ){
 
-        if(Build.VERSION.SDK_INT >22){
+        if(Build.VERSION.SDK_INT >=23){
 
             List<String> listaPermissoes = new ArrayList<>();
 

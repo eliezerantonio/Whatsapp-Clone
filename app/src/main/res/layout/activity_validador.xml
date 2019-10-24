@@ -39,7 +39,7 @@
         android:textColor="@color/textColorPrimary" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edit_cod_validacao"
         android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -56,12 +56,14 @@
         android:layout_below="@+id/editText5"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="235dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/botao_validao" />
 </RelativeLayout>

@@ -32,7 +32,8 @@ public class LoginActivity extends Activity {
     private EditText codigoPais;
 
     private String[] permisoesNecesssarias = new String[]{
-         Manifest.permission_group.SMS
+            Manifest.permission.SEND_SMS,
+            Manifest.permission.INTERNET
     };
 
     @Override
@@ -40,7 +41,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Permisao.validaPermissoes(1, LoginActivity.this, permisoesNecesssarias);
+        Permisao.validaPermissoes(1, this, permisoesNecesssarias);
 
         telefone = findViewById(R.id.edit_telefone);
         nome = findViewById(R.id.edit_nome);
@@ -75,7 +76,7 @@ public class LoginActivity extends Activity {
 
                     //substituicao de String
 
-                    // telefoneCompleto="8135"
+                     telefoneCompleto="8135";
                     String telefoneSemFormatacao = telefoneCompleto.replace("+", "");
                     telefoneSemFormatacao = telefoneSemFormatacao.replace("-", "");
 
@@ -101,8 +102,16 @@ public class LoginActivity extends Activity {
                     //Envio do SMS
 
                     boolean enviodoSms = enviaSMS("+" + telefoneSemFormatacao, mensagemEnvio);
-                    Intent intent = new Intent(LoginActivity.this, ValidadorActivity.class);
-                    startActivity(intent);
+
+                    if (enviodoSms) {
+                        Intent intent = new Intent(LoginActivity.this, ValidadorActivity.class);
+                        startActivity(intent);
+                        //depois devo destruir  a activity anterior
+                        finish();
+
+                    }else {
+                        Toast.makeText(LoginActivity.this, "Problema ao enviar o sms", Toast.LENGTH_SHORT).show();
+                    }
 
 
                 }
