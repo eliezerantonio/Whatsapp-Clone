@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +8,20 @@
     tools:context=".activity.LoginActivity">
 
 
-
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="@dimen/largura_logo"
         android:layout_height="@dimen/altura_logo"
-        android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logo" />
+        android:background="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
+
 
     <EditText
         android:id="@+id/edit_nome"
@@ -25,56 +31,62 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="3dp"
-        android:hint="Digite seu nome."
-        android:textColor="@color/textColorPrimary" />
-
-    <EditText
-        android:id="@+id/edit_cod_pais"
-        android:layout_width="59dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_nome"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="+244"
-        android:inputType="number"
-        android:textColor="@color/textColorPrimary" />
-
-    <EditText
-        android:id="@+id/edit_telefone"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/edit_cod_pais"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="-1dp"
-
-        android:layout_marginRight="45dp"
-        android:layout_toEndOf="@+id/edit_cod_pais"
-        android:layout_toRightOf="@+id/edit_cod_pais"
-        android:ems="10"
-        android:hint="995-855-253"
-        android:inputType="number"
-        android:textColor="@color/textColorPrimary" />
-
+        android:hint="E-mail"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
 
     <Button
-        android:id="@+id/bt_cadastrar"
+       android:id="@+id/bt_login"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_telefone"
-        android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Cadastrar" />
 
-</RelativeLayout>
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
+
+    <TextView
+        android:id="@+id/text_cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Não tem uma conta? cadastre-se"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
